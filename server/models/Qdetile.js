@@ -2,10 +2,11 @@ const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema(
     {
-        //父级id
+        //父级用户id
         parent: { type: mongoose.SchemaTypes.ObjectId, ref: 'Quser' },
         //用户基本信息
         phone: { type: String },        //用户手机号
+        learncode: { type: String },    //用户学号
         weixin: { type: String },       //用户微信号
         qq: { type: String },           //用户QQ号
         address: { type: String },      //用户宿舍号
@@ -22,4 +23,4 @@ const UserSchema = new mongoose.Schema(
     { timestamps: true }
 )
 
-module.exports = mongoose.model('Qdetile', UserSchema)
+module.exports = mongoose.model('Qwallet', UserSchema)
