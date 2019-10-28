@@ -142,24 +142,24 @@
   transform: translate(-50%,-50%);
 }
 .button button{
-  width:188rpx;
+  width:148rpx;
   height:58rpx;
   background:linear-gradient(-85deg,rgba(255,107,51,1) 0%,rgba(255,170,51,1) 100%);
   border-radius:13px;
 }
 .neck-botton{
-  position: absolute;
-  right: 4px;
-  width:188rpx;
+  display: flex;
+  width:148rpx;
   height:26rpx;
   font-size:13px;
+  line-height: 58rpx;
   font-family:Adobe Heiti Std;
   font-weight:normal;
   color:rgba(255,255,255,1);
 }
 .GuoGuo-you{
-  width: 3px;
-  height: 4px;
+  display: flex;
+  font-size: 13px;
 }
  /* 个人中心整体布局 */
  .personal-container {
