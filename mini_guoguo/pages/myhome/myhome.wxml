@@ -1,0 +1,50 @@
+<!-- 个人中心头部总体布局  -->
+<view class='personal-header' style='margin-top: {{height}}px'>
+<!-- 头部整体布局 -->
+  <view class="header-box">
+
+    <!-- 头像总体 -->
+      <view class="portrait-box">
+        <image class="header-portrait" mode='widthFix' src="../../images/tags.jpg"></image>
+      </view>
+      <!-- 头部文字总体 -->
+          <view class="Text-box">
+              <view class="portrait">
+                <h4 class="portrait-text">快点科技</h4>          
+              </view>
+                <view class="Data">
+                <p class="Data-text">这是你使用景院裹裹的第一天</p>                
+                </view>
+          </view>
+          
+          <!-- 裹裹余额总体 -->
+          <view class="examine-balance">
+          <!-- 砖石图标 -->
+            <view class="masonry-image">
+              <image class="masonry" src="../../images/masonry.png" mode='widthFix'></image>
+            </view>
+            <!-- 裹裹余额？ -->
+            <view class="guoguo-balance">
+              <h4 class="balance" >裹裹余额 <span style="color:red;">{{balance}}</span></h4>
+            </view>
+             <view class="guoguo-text">
+              <h4 class="balance-text">邀请新人限时领取海量裹派余额</h4>
+            </view>
+            <!-- 领裹裹按钮 -->
+            <view class="button">
+               <button>
+               <p class="neck-botton">领裹裹<icon class="KuaiDian GuoGuo-you"></icon></p>
+                </button>
+            </view>
+          </view>
+  </view>
+</view>
+
+<!-- 列表 -->
+<view class="personal-container">
+  <view class="package-list">
+  <icon class="KuaiDian GuoGuo-wode"></icon>
+    <h4>导入包裹1</h4>
+  </view>
+  
+</view>

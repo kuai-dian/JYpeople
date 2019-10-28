@@ -1,0 +1,36 @@
+<!-- 底部导航栏总体 -->
+<cover-view class='tab-bar'>
+<!-- 首页 -->
+ <cover-view class='tab-bar-index' data-index='0' data-path='{{list[0].pagePath}}' bindtap='tab_bar_index'>
+      <cover-view class='tab-bar-icon'>
+        <cover-image src='{{selected == 0 ? list[0].selectedIconPath : list[0].iconPath}}' class='tab-bar-img1'/>
+        <cover-view class='tab-bar-text1' style='color:{{selected == 0 ? selectedColor : color}}'>首页</cover-view>
+      </cover-view>
+    </cover-view>
+
+    <!-- 驿站-->
+    <cover-view class='tab-bar-index' data-index='1' data-path='{{list[1].pagePath}}' bindtap='tab_bar_index'>
+      <cover-view class='tab-bar-icon'>
+        <cover-image src='{{selected == 1 ? list[1].selectedIconPath : list[1].iconPath}}' class='tab-bar-img2'/>
+        <cover-view class='tab-bar-text2' style='color:{{selected == 1 ? selectedColor : color}}'>驿站</cover-view>
+      </cover-view>
+    </cover-view>
+
+  <!-- 我的 -->
+      <cover-view class='tab-bar-index' data-index='2' data-path='{{list[2].pagePath}}' bindtap='tab_bar_index'>
+        <cover-view class='tab-bar-icon'>
+          <cover-image src='{{selected == 2 ? list[2].selectedIconPath : list[2].iconPath}}' class='tab-bar-img3'/>
+          <cover-view class='tab-bar-text3'  style='color:{{selected == 2 ? selectedColor : color}}'>我的</cover-view>
+        </cover-view>
+      </cover-view>
+</cover-view>
+
+<!-- 客服 -->
+    <cover-view class='tab-bar-index-add' bindtap='tab_bar_add'>
+      <cover-view class='tab-bar-icon_add'>
+        <cover-image class='tab-bar-img-add' src='{{addImgPath}}'/>
+        <cover-view class='tab-bar-text4'>在线客服</cover-view>
+      </cover-view>
+    </cover-view>
+
+  
