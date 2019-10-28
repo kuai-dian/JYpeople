@@ -21,7 +21,7 @@
     </view>
     <view class="succeed">
       <view><image class="tongji" src="../../iconfont-img/tongji.png"></image></view>
-      <h4 class="succeed-many">成功{{amount}}单</h4>
+      <h4 class="succeed-many">成功{{OrderNum.OrderNum}}单</h4>
     </view>
   </view>
   <!-- 已结单 -->

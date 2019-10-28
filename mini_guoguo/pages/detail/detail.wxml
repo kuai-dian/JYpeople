@@ -1,0 +1,46 @@
+  <!-- 最顶部导航栏 -->
+  <view class='home-page2'>
+  <h4 class="navbar-relation2">订单详情</h4>
+  </view>
+
+  <!-- 页面内容 -->
+<view class="detail-main">
+  <view class="main-status">
+    <view class="status-img">
+      <view class="img-yunda">
+        <image mode="widthFix" src="https://ss1.baidu.com/70cFfyinKgQFm2e88IuM_a/forum/pic/item/ac6eddc451da81cbea644e2c5c66d01608243155.jpg"></image>
+      </view>
+      <view class="img-text">
+        <text>运单号：TT6600408475804</text>
+        <text>悬赏：1元</text>
+        <text>接单人：胡俊平(信工17计网)</text>
+      </view>
+    </view>
+    <text class="status-yunda">韵达快递  官方电话：95311</text>
+    <view class="status-now">
+      <view class="now-status">当前状态:</view>
+      <view class="now-receive">
+        <text class="receive-xi">信工17计网-胡俊平</text>
+        <text class="receive-jie">已接单</text>
+      </view>
+    </view>
+    <view class="status-ser">
+      <text class="ser-white">催单</text>
+      <text class="ser-black">联系胡俊平</text>
+      <text class="ser-black">订单胡俊平？</text>
+    </view>
+    <text class="status-time">下单时间：20191015  2:30</text>
+  </view>
+  
+  <view class="main-adv">
+    <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain">
+      <swiper-item class="swiperItem" wx:for="{{imgList}}" wx:key="{{index}}">
+        <navigator>
+          <!-- index是键值 -->
+          <image class="swiperImage" mode="widthFix" src="{{imgList[index].banner}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <text></text>
+</view>

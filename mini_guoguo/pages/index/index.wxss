@@ -8,7 +8,7 @@
   height:560rpx;
   background:linear-gradient(180deg,rgba(0,216,163,1) 0%,rgba(0,179,213,1) 38%,rgba(255,255,255,1) 48%);
   border-radius:0px;
-  z-index: 999;
+  z-index: 0;
 }
 .navbar-relation2 {
   position: absolute;
@@ -17,7 +17,7 @@
   transform: translate(-50%,-50%);
   font-size: 36rpx;
   color: #fff;
-  z-index: 999;
+  z-index: 0;
 }
 
 /* 整体布局 */

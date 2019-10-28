@@ -42,7 +42,7 @@ App({
               this.globalData.userInfo = res.userInfo
               console.log(res.userInfo)
               wx.request({
-                url: `${config.api}/users`,
+                url: `${config.api}/login`,
                 method: 'POST',
                 data: {
                   data: res.userInfo,
