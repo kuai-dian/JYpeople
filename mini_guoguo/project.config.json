@@ -10,7 +10,6 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"nodeModules": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
@@ -22,9 +21,9 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.3",
-	"appid": "wxadc4ef260d8b419b",
-	"projectname": "%E6%99%AF%E9%99%A2%E4%BA%BA",
+	"libVersion": "2.9.0",
+	"appid": "wx3f969596f8f7d2be",
+	"projectname": "miniprogram-test-2",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

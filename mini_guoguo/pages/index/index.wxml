@@ -1,44 +1,18 @@
+<!--index.wxml-->
 <view class="container">
-  <image src='http://yun1.e-spy.cn/mini_back2.png' style='width:100%;'></image>
-  <van-notice-bar text="通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容通知内容" left-icon="volume-o"></van-notice-bar>
-  <van-grid border='false' style="border-radius:1rem;">
-    <van-grid-item icon="printer" text="在线打印" bindtap="goooo" />
-    <van-grid-item icon="alipay" text="余额充值" />
-    <van-grid-item icon="invition" text="招贤纳士" bindtap="zhao"/>
-    <van-grid-item icon="service" text="联系客服" />
-  </van-grid>
-  <view class='askBox'>
-    <view class="askItem">
-      <view>
-        <view class="askcol" style="margin-right:1rem">
-          <image class="usericon" src="https://wx.qlogo.cn/mmopen/vi_32/2zGClHFjNiazQeKHQOzvezlQoogrGKmR2iaLgpVR3StFZanibvLcGSJXocJ7Ejhbwia694NhhAkg440DCPvV1mfDJA/132" />
-        </view>
-        <view class="askcol">
-          <h3>@hy</h3>
-          <br />
-          <span>来自信息工程学院 15分钟前</span>
-        </view>
-        <view class="zan" style="display:right">
-          <van-icon class="zanle" name="good-job"></van-icon>
-        </view>
-      </view>
-      <view class="askContant">Icon的name属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例</view>
-    </view>
-    <view class="askItem">
-      <view>
-        <view class="askcol" style="margin-right:1rem">
-          <image class="usericon" src="https://wx.qlogo.cn/mmopen/vi_32/2zGClHFjNiazQeKHQOzvezlQoogrGKmR2iaLgpVR3StFZanibvLcGSJXocJ7Ejhbwia694NhhAkg440DCPvV1mfDJA/132" />
-        </view>
-        <view class="askcol">
-          <h3>@hy</h3>
-          <br />
-          <span>来自信息工程学院 15分钟前</span>
-        </view>
-        <view class="zan" style="display:right">
-          <van-icon class="zanle" name="good-job"></van-icon>
-        </view>
-      </view>
-      <view class="askContant">Icon的name属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例</view>
-    </view>
+<view class='appInfo'>
+<image style='height:100px;width:100px' src='http://yun1.e-spy.cn/APP%20ICON.jpg'></image>
+<view>景院裹裹</view>
+</view>
+  <view class="usermotto">
+    <text class="user-motto">该程序将获取以下授权</text>
+    <view >获取您的公开信息（昵称、头像等）</view>
+  </view>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" style='background:#27a4ff;width:250px;color:#FFF;' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录景院裹裹小程序 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
   </view>
 </view>

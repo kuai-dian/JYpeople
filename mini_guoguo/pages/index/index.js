@@ -1,37 +1,54 @@
+//index.js
+//获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    info:''
+    motto: 'Hello World',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
   },
   onLoad: function () {
-    this.setData({
-       info:getApp().globalData.info
-    });
-    console.log(this.data.info)
-  },
-  onShow: function () {
-    try {
-      var userInfo = wx.getStorageSync('user')
-      if (userInfo) {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse){
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
         this.setData({
-          test: true,
+          userInfo: res.userInfo,
+          hasUserInfo: true
         })
       }
-    } catch (e) {
-      console.log(e);
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
     }
   },
-    goooo: function (a) {
-        wx.navigateTo({
-          url: `/pages/print/print`
-        })
-    },
-  zhao: function (a) {
-    wx.navigateTo({
-      url: `/pages/zhao/zhao`
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
     })
   }
-     
-
 })
