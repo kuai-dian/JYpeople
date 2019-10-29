@@ -15,7 +15,7 @@ Component({
         text: "首页"
       },
       {
-        pagePath: "/pages/post/post",
+        pagePath: "/pages/yellow/yellow",
         iconPath: "/iconfont-img/post.png",
         selectedIconPath: "/iconfont-img/click-post.png",
         text: "驿站"

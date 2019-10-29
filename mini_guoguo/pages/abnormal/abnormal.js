@@ -1,50 +1,20 @@
-// client/pages/detail/detail.js
+// pages/submit/submit.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    OrderNum: '',
-    Express: [],
-    SysInfo: []
-    
+    imgList: []
   },
-  toSubmit:function(options){
-    wx.navigateTo({
-      url: '../submit/submit',
-    })
-  },
-  getSum() {
+  // 广告接口获取数据
+  getAdvImg() {
     let that = this;
     wx.request({
-      url: "http://119.29.163.198:30002/JYguoguo/api/OrderCount",
+      url: 'http://119.29.163.198:30002/JYguoguo/api/advertise',
       success: function (res) {
         that.setData({
-          OrderNum: res.data
-        })
-      }
-    })
-  },
-  getExpress() {
-    let that = this;
-    wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/postinc',
-      method: 'GET',
-      success: function (res) {
-        that.setData({
-          Express: res.data
-        })
-      }
-    })
-  },
-  getSysInfo(){
-    let that = this;
-    wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/system',
-      success(res){
-        that.setData({
-          SysInfo: res.data
+          imgList: res.data
         })
       }
     })
@@ -53,9 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getSum();
-    this.getExpress();
-    this.getSysInfo();
+    this.getAdvImg();
   },
 
   /**

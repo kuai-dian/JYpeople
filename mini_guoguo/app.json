@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/abnormal/abnormal",
+    "pages/submit/submit",
     "pages/detail/detail",
+    "pages/yellow/yellow",
     
     "pages/myhome/myhome",
     "pages/post/post",
