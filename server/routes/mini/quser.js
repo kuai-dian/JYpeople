@@ -1,13 +1,15 @@
+// 模块引入
+const axios = require('axios')
 const jwt = require('jsonwebtoken')
+// 配置信息
+const config = require('../../plugins/config')
+// 数据库模型
 const User = require('../../models/Quser')
 const Qdetile = require('../../models/Qdetile')
 const System = require('../../models/System')
-
-const config = require('../../plugins/config')
-const axios = require('axios')
-
+// 设置jwt
 let generateToken = function (user) {
-    return jwt.sign(user, config.jwtSecret, {
+    return jwt.sign(user, config.JYpeople.jwtSecret, {
         expiresIn: 7200
     })
 }
@@ -19,12 +21,10 @@ exports.now = async (req, res) => {
         model
     })
 }
-
+//小程序用户登录
 exports.login = (req, res) => {
-    // const userData = JSON.parse(req.body.rawdata)
-    const queryString = `appid=${config.appId}&secret=${config.appSecret}&js_code=${req.body.code}&grant_type=authorization_code`;
+    const queryString = `appid=${config.JYpeople.appId}&secret=${config.JYpeople.appSecret}&js_code=${req.body.code}&grant_type=authorization_code`;
     const wxAPI = `https://api.weixin.qq.com/sns/jscode2session?${queryString}`;
-    // https://api.q.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
     axios.get(wxAPI)
         .then(response => {
             User.findOne({ openId: response.data.openid }, (err, user) => {
@@ -32,7 +32,8 @@ exports.login = (req, res) => {
                     console.log(user)
                     return res.json({
                         token: generateToken({ openid: response.data.openid }),
-                        openid: response.data.openid
+                        openid: response.data.openid,
+                        id: user._id
                     })
                 } else {
                     const user = new User();
@@ -40,10 +41,10 @@ exports.login = (req, res) => {
                     user.save();
                     return res.json({
                         token: generateToken({
-                            openid: response.data.openid
+                            openid: response.data.openid,
                         }),
-                        openid: response.data.openid
-
+                        openid: response.data.openid,
+                        id: user._id
                     })
                 }
             })
@@ -52,7 +53,7 @@ exports.login = (req, res) => {
             console.log(error)
         })
 }
-
+//登录token校验
 exports.checkToken = (req, res, next) => {
     let token = req.headers.authorization;
     console.log(token);
@@ -88,9 +89,7 @@ exports.checkToken = (req, res, next) => {
         });
     }
 }
-
-
-// 用户个人资料
+// 用户个人资料更新
 exports.users = (req, res) => {
     const userData = req.body.userData.detail.userInfo
     const openid = req.body.openid
@@ -105,16 +104,4 @@ exports.users = (req, res) => {
             })
         }
     })
-
-    console.log()
-    // const userData = req.body
-    // if (userData.userData) {
-    //     user.nickname = userData.userData.nickName;
-    //     user.headimgurl = userData.userData.avatarUrl;
-    //     user.gender = userData.userData.gender;
-    //     user.save();
-    // }
-    // const qdetile = new Qdetile();
-    // qdetile = req.body.udetile;
-    // qdetile.save()
 }

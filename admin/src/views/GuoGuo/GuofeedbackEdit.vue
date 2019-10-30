@@ -1,18 +1,9 @@
 <template>
   <div>
-    <h1>景院裹裹小程序系统设置</h1>
+    <h1>{{id?'编辑':'新建'}}问题反馈内容</h1>
     <el-form label-width="120px" @submit.native.prevent="save">
-      <el-form-item label="首页标题">
-        <el-input v-model="model.index"></el-input>
-      </el-form-item>
-      <el-form-item label="首页搜索条内容">
-        <el-input v-model="model.search"></el-input>
-      </el-form-item>
-      <el-form-item label="取快递按钮内容">
-        <el-input v-model="model.server"></el-input>
-      </el-form-item>
-      <el-form-item label="订单页价格提示">
-        <el-input v-model="model.price"></el-input>
+      <el-form-item label="广告名称">
+        <el-input v-model="model.content"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" native-type="submit">保存</el-button>
@@ -22,33 +13,38 @@
 </template>
 <script>
 export default {
+  props: {
+    id: {}
+  },
   data() {
     return {
       model: {}
     };
   },
   methods: {
+    afterUpload(res) {
+      this.$set(this.model, "banner", res.url);
+    },
     async save() {
       let res;
-      console.log(this.model);
-      res = await this.$http.put(
-        `rest/guosystems/${this.model._id}`,
-        this.model
-      );
+      if (this.id) {
+        res = await this.$http.put(`rest/guofeedbacks/${this.id}`, this.model);
+      } else {
+        res = await this.$http.post("rest/guofeedbacks", this.model);
+      }
+      this.$router.push("list");
       this.$message({
         type: "success",
         message: "保存成功！"
       });
-      this.fetch();
     },
     async fetch() {
-      const res = await this.$http.get(`rest/guosystems`);
-      console.log(res.data[0]);
-      this.model = res.data[0];
+      const res = await this.$http.get(`rest/guofeedbacks/${this.id}`);
+      this.model = res.data;
     }
   },
   created() {
-    this.fetch();
+    this.id && this.fetch();
   }
 };
 </script>
