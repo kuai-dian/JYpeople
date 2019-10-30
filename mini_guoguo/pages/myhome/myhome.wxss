@@ -1,5 +1,56 @@
 @import "../../icon/iconfont.wxss";
 
+/* pages/startpage/startpage.wxss */
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.appInfo{
+  text-align: center;
+}
+.appInfo view{
+  color: #555;
+  line-height: 5rem;
+  
+}
+.usermotto{
+  width: 260px;
+  line-height: 1.8rem;
+  border-top: 1px solid #fafafa;
+  padding-top: 1rem;
+  margin-bottom: 4rem;
+  float: left;
+}
+.user-motto{
+  font-weight: 900;
+}
+.container{
+  height: 80vh;
+  position: relative;
+}
+.userinfo{
+  display: block;
+  position: absolute;
+  bottom: 20%;
+}
+.userinfo button{
+  line-height: 2.5rem;
+  height: 2.5rem;
+}
+
 /* 个人中心头部总体布局 */ 
 .personal-header{
   position: fixed;
@@ -170,11 +221,10 @@
  /* 个人中心整体布局 */
  .personal-container {
     display: flex;
-    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 500rpx 0;
+    padding: 500rpx 0 10rem;
     background: #F9F9F9;
     overflow: hidden;
     z-index: 80;

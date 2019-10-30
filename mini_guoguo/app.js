@@ -39,25 +39,23 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               const userid = wx.getStorageSync('userid');
+              const token = wx.getStorageSync('token');
               this.globalData.userInfo = res.userInfo
               console.log(res.userInfo)
               wx.request({
-                url: `${config.api}/login`,
-                method: 'POST',
+                url: `${config.api}/user/userinfo`,
+                method: 'PUT',
                 data: {
                   data: res.userInfo,
                   userid: userid
                 },
                 header: {
-                  'content-type': 'application/json'
+                  'content-type': 'application/json',
+                  authorization: token,
                 },
                 success: function (res) {
                   console.log(res.data)
-                  wx.setStorageSync('token', res.data.token)
-                  if (res.data.openid != '') {
-                    wx.setStorageSync('openid', res.data.openid)
-                    wx.setStorageSync('userid', res.data.id)
-                  }
+                  wx.setStorageSync('userinfo', res.data)
                 }
               })
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回

@@ -1,3 +1,5 @@
+const config = require('../../config/config.js');
+
 // client/pages/detail/detail.js
 Page({
 
@@ -10,6 +12,28 @@ Page({
     SysInfo: []
     
   },
+  click: function (e) {
+    var id = e.currentTarget.id
+
+
+
+    wx.navigateTo({
+      url: '../detail/detail',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { id: id })
+      }
+    })
+
+
+
+
+
+
+
+
+
+  },
   toSubmit:function(options){
     wx.navigateTo({
       url: '../submit/submit',
@@ -18,7 +42,7 @@ Page({
   getSum() {
     let that = this;
     wx.request({
-      url: "http://119.29.163.198:30002/JYguoguo/api/OrderCount",
+      url: `${config.api}/OrderCount`,
       success: function (res) {
         that.setData({
           OrderNum: res.data
@@ -26,25 +50,38 @@ Page({
       }
     })
   },
-  getExpress() {
+  getSysInfo(){
     let that = this;
     wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/postinc',
-      method: 'GET',
-      success: function (res) {
+      url: `${config.api}/system`,
+      success(res){
         that.setData({
-          Express: res.data
+          SysInfo: res.data
         })
       }
     })
   },
-  getSysInfo(){
+  getOrder(){
+    var userid = wx.getStorageSync('userid')
     let that = this;
     wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/system',
-      success(res){
+      url: `${config.api}/userOrders/${userid}`,
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data);
         that.setData({
-          SysInfo: res.data
+          Express: res.data,
+          receive: (res.data).length,
+        })
+      }
+    })
+    wx.request({
+      url: `${config.api}/userOrdersDone/${userid}`,
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          account: (res.data).length
         })
       }
     })
@@ -54,8 +91,8 @@ Page({
    */
   onLoad: function (options) {
     this.getSum();
-    this.getExpress();
     this.getSysInfo();
+    this.getOrder();
   },
 
   /**
@@ -69,6 +106,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getOrder();
 
   },
 

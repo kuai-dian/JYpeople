@@ -2,42 +2,10 @@
 /* 顶部、信息填写和广告位都用的fixed定位 */
 /* 页面顶部 */
 .topBackground{
-  position: fixed;
   width:100%;
-  height:560rpx;
-  background:linear-gradient(180deg,#0005D8 0%,#0050D5 20%,rgba(255,255,255,1) 48%);
-  border-radius:0px;
-  z-index: 0;
+  background:linear-gradient(180deg,lightblue 0%,rgb(121, 166, 238) 20%,rgba(255,255,255,1) 60%);
+  height: 100vh;
 }
-.topNavigation{
-  position: fixed;
-  height:190rpx;
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left:43rpx;
-}
-.topBackIcon{
-  height:40rpx;
-  width:40rpx;
-}
-.topNavigation text{
-  margin-left:210rpx;
-}
-.topInput{
-  position:fixed;
-  margin-top:170rpx;
-  margin-left:11%;
-  padding-left:24rpx;
-  background:white;
-  width:76%;
-  height:64rpx;
-  border-radius:10rpx;
-  font-size:32rpx;
-}
-
-
 /* 信息输入 */
 .dataInput{
   width:84%;
@@ -46,24 +14,29 @@
   height:677rpx;
   position: fixed;
   z-index:100;
-  margin-top:270rpx;
+  margin-top:24rpx;
 }
 .dataTxetarea{
-  border:1px solid #ccc;
+  box-shadow: 0 0 20 #ccc;
+  background: #fff;
   width:96%;
   height:282rpx;
   padding-top:18rpx;
   padding-left:28rpx;
   font-size:34rpx;
+  border-radius: .5rem;
+  margin-top: 24rpx;
 }
 .datanNameAndAddress{
+  background: #fff;
+  box-shadow: 0 0 20 #ccc;
   width:96%;
   height:85rpx;
-  border:1px solid #ccc;
   line-height: 85rpx;
   padding-left:28rpx;
   margin-top:24rpx;
   font-size:34rpx;
+  border-radius: .5rem;
 }
 .dataBtn{
   width:100%;

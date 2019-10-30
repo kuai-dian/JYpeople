@@ -1,12 +1,19 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/abnormal/abnormal",
-    "pages/submit/submit",
-    "pages/detail/detail",
-    "pages/yellow/yellow",
     
+    "pages/submit/submit",
+    "pages/yellow/yellow",
     "pages/myhome/myhome",
+    
+    "pages/feedback/feedback",
+    "pages/userinfo/userinfo",
+    
+    
+    
+    "pages/startpage/startpage",
+    
+    "pages/detail/detail",
     "pages/post/post",
     "pages/service/service",
     "pages/input-sousuo/input-sousuo"
@@ -27,7 +34,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/post/post",
+        "pagePath": "pages/yellow/yellow",
         "iconPath": "iconfont-img/post.png",
         "selectedIconPath": "iconfont-img/click-post.png",
         "text": "驿站"

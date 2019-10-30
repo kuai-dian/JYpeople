@@ -3,6 +3,7 @@
 	width:100%;
   position:absolute;
   z-index:0;
+  padding-bottom: 10rem;
 }
 .main-status{
 	margin:24rpx auto;

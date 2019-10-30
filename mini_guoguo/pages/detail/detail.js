@@ -1,3 +1,5 @@
+const config = require('../../config/config.js');
+
 // client/pages/detail/detail.js
 Page({
 
@@ -5,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    info:{},
     imgList: [],
     list:[
       {
@@ -24,7 +27,7 @@ Page({
   getAdvImg(){
     let that = this;
     wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/advertise',
+      url: `${config.api}/advertise`,
       success:function (res){
         that.setData({
           imgList: res.data
@@ -35,10 +38,39 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.getAdvImg();
-  },
 
+  onLoad: function (option) {
+    this.getAdvImg();
+    const eventChannel = this.getOpenerEventChannel()
+    // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
+    let that = this
+    eventChannel.on('acceptDataFromOpenerPage', function (data) {
+      that.getdatanow(data.id)
+    })
+  },
+  getdatanow(e){
+    if (e) {
+      let that = this;
+      var token = wx.getStorageSync('token')
+      wx.request({
+        url: `${config.api}/userOrders`,
+        method: 'POST',
+        data: {
+          id: e,
+        },
+        header: {
+          'content-type': 'application/json',
+          authorization: token,
+        },
+        success: function (res) {
+          console.log(res)
+          that.setData({
+            info: res.data
+          })
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

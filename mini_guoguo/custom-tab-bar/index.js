@@ -35,7 +35,7 @@ Component({
       wx.switchTab({ url })
     },
 
-    // 发布添加按钮跳转
+    // 在线客服
     tab_bar_add() {
       var url = "/pages/service/service"
       wx.navigateTo({ url })

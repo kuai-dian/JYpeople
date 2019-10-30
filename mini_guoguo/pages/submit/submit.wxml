@@ -1,23 +1,19 @@
-<view>
-
-
-  <!-- navigation导航 -->
-  <view class="top">
-    <view class="topBackground"></view>
-    <view class="topNavigation">
-      <image bindtap="backIndex" class="topBackIcon" mode="widthFix" src="./back.png"></image>
-      <text>发布订单</text>
-    </view>
-    <input class="topInput" placeholder="请输入运单号"></input>
-  </view>
-
+<view class="topBackground">
 
   <!-- 内容填写区域 -->
   <view class="dataInput">
-    <textarea name="" bindinput="" class="dataTxetarea" placeholder="请输入取件短信内容"></textarea>
-    <input name="" bindinput="" class="datanNameAndAddress" placeholder="收件人姓名"></input>
-    <input name="" bindinput="" class="datanNameAndAddress" placeholder="收货地点"></input>
-    <button class="dataBtn">提交订单</button>
+  <view class="datanNameAndAddress">
+  <picker mode="selector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{objectMultiArray}}" range-key="name">
+    <view class="picker">
+      快递：{{objectMultiArray[[multiIndex]].name}}
+    </view>
+  </picker>
+</view>
+    <input name="" bindinput="getSendcode" class="datanNameAndAddress" placeholder="请输入运单号"></input>
+    <textarea name="" bindinput="getMessage" class="dataTxetarea" placeholder="请输入取件短信内容"></textarea>
+    <input name="" bindinput="getSendname" class="datanNameAndAddress" placeholder="收件人姓名"></input>
+    <input name="" bindinput="getAddress" class="datanNameAndAddress" placeholder="收货地点"></input>
+    <button class="dataBtn" bindtap="submitOrder">提交订单</button>
   </view>
 
 
