@@ -2,15 +2,15 @@
 <view class="main widthMax">
   <view class="mainTop widthMax">
     <view class="logo">
-      <image class="widthMax"></image>
+      <image mode="widthFix" class="widthMax" src="http://j.jdzxy.xyz/logo.jpg"></image>
       <text>快点科技</text>
     </view>
     <!-- 120-150字 -->
-    <view class="introduction">快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份。快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份。快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份。</view>
+    <view class="introduction">快点网络科技工作室是高校大学生自发组织的创业组织，于2019年2月28日成立。团队致力解决教学资源分配不均等、推进教学融入科技领域、打破教学区域限制问题为核心思想，为老师、学生提供先进的教学服务以及教学体验。</view>
   </view>
   <view class="mainBottom widthMax">
     <view class="ourImage">
-      <image></image>
+      <image mode="widthFix" src="http://j.jdzxy.xyz/team.png"></image>
     </view>
   </view>
 </view>

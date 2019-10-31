@@ -86,7 +86,7 @@
   <view class="line"></view>
 
   <!-- 关于我们 -->
-  <view class="remain-list">
+  <view bindtap="toAbout" class="remain-list">
     <view class="left-text">
       <icon class="KuaiDian GuoGuo-weizhi"></icon>
       <h4 class="package-text">关于我们</h4>
@@ -99,7 +99,7 @@
   <view class="line"></view>
 
   <!-- 服务中心 -->
-  <view class="remain-list">
+  <view bindtap="toService" class="remain-list">
     <view class="left-text">
       <icon class="KuaiDian GuoGuo-kefu"></icon>
       <h4 class="package-text">在线客服</h4>

@@ -45,6 +45,16 @@ Component({
           }
         })
       },
+      toAbout:function(){
+        wx.navigateTo({
+          url: '../about/about',
+        })
+      },
+      toService:function(){
+        wx.navigateTo({
+          url: '../service/service',
+        })
+      },
 //获取时间差
       getNowDate :function () {
         var d = new Date();

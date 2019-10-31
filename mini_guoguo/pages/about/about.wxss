@@ -4,7 +4,6 @@
 }
 
 .mainTop{
-  border:1px solid black;
   height:740rpx;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,6 @@
 }
 .logo{
   width:200rpx;
-  border:1px solid rebeccapurple;
   height:260rpx;
   display: flex;
   flex-direction: column;
@@ -23,14 +21,12 @@
 }
 .logo image{
   height:200rpx;
-  border:1px solid aquamarine;
 }
 .logo text{
   font-size:32rpx;
   color:#ccc;
 }
 .introduction{
-  border:1px solid saddlebrown;
   width:80%;
   height:440rpx;
   padding: 0 10rpx;
@@ -43,7 +39,6 @@
 
 
 .mainBottom{
-  border:1px solid red;
   height:300rpx;
   margin-top:10rpx;
   display: flex;
@@ -52,6 +47,8 @@
 }
 .ourImage{
   width:84%;
-  border:1px solid sandybrown;
   height:290rpx;
+}
+.ourImage image{
+  border-radius: 10rpx;
 }
