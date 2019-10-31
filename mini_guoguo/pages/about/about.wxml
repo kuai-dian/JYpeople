@@ -1,0 +1,17 @@
+<!--pages/about/about.wxml-->
+<view class="main widthMax">
+  <view class="mainTop widthMax">
+    <view class="logo">
+      <image class="widthMax"></image>
+      <text>快点科技</text>
+    </view>
+    <!-- 120-150字 -->
+    <view class="introduction">快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份。快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份。快点网络科技是一个致力于打造全国性学生学习平台，工作室创立于2018年3月份。</view>
+  </view>
+  <view class="mainBottom widthMax">
+    <view class="ourImage">
+      <image></image>
+    </view>
+  </view>
+</view>
+

@@ -17,16 +17,18 @@
 .status-img{
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-around;
 	padding-top:3.33%;
   padding-bottom:3.33%;
+  border:1px solid #ccc;
+  margin-bottom:10rpx;
+  border-radius:10rpx;
 }
 .img-text{
 	display: flex;
 	flex-direction: column;
-	margin-left: 4.5%;
 	font-size:32rpx;
-  width:350rpx;
+  width:430rpx;
 }
 .text-address{
   width:350rpx;

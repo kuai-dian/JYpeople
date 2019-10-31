@@ -1,0 +1,4 @@
+<!--pages/advDetail/advDetail.wxml-->
+<view class="main">
+  <image mode="widthFix" src="{{advImg}}"></image>
+</view>

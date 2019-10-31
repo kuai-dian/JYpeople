@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "联系客服",
+  "navigationBarBackgroundColor": "#00B3D5",
+  "navigationBarTextStyle": "black"
 }

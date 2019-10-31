@@ -11,18 +11,33 @@ Page({
     imgList: [],
     list:[
       {
-        id: "001",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/84298f8c72118708a65f4ff092c75696.jpg_r_640x290x70_d110ba9a.jpg"
+        id: "华公教育",
+        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/84298f8c72118708a65f4ff092c75696.jpg_r_640x290x70_d110ba9a.jpg",
+        img: "http://106.54.52.67/pic01.png"
       },{
-        id: "002",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/98f78f42ea70a06985f7a565f2aeb035.jpg_r_640x290x70_d1b02ba3.jpg"
+        id: "聚汇",
+        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/98f78f42ea70a06985f7a565f2aeb035.jpg_r_640x290x70_d1b02ba3.jpg",
+        img: "http://106.54.52.67/pic02.png"
       },{
-        id: "003",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/b8a820334e2cea2eed1540850a44bc3b.jpg_r_640x290x70_da605bda.jpg"
+        id: "Nice造型",
+        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/b8a820334e2cea2eed1540850a44bc3b.jpg_r_640x290x70_da605bda.jpg",
+        img: "http://106.54.52.67/pic03.png"
+      },
+      {
+        id: "三号酒馆",
+        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/98f78f42ea70a06985f7a565f2aeb035.jpg_r_640x290x70_d1b02ba3.jpg",
+        img: "http://106.54.52.67/pic04.png"
       }
     ]
   },
-
+  toAdv:function(event){
+    console.log(event)
+    let postId = event.currentTarget.dataset.postId
+    let postImg = event.currentTarget.dataset.postImg
+    wx.navigateTo({
+      url: '../advDetail/advDetail?id=' + postId + '&img='+ postImg,
+    })
+  },
   // 广告接口获取数据
   getAdvImg(){
     let that = this;
@@ -70,6 +85,22 @@ Page({
         }
       })
     }
+  },
+  call:function(){
+    wx.makePhoneCall({
+      phoneNumber: '18879013921',
+    })
+  },
+  clickAbnormal:function(){
+    wx.navigateTo({
+      url: '../abnormal/abnormal',
+    })
+  },
+  backIndex: function () {
+    console.log("触发")
+    wx.navigateTo({
+      url: '../index/index',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,0 +1,57 @@
+/* pages/about/about.wxss */
+.widthMax{
+  width:100%;
+}
+
+.mainTop{
+  border:1px solid black;
+  height:740rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top:30rpx;
+}
+.logo{
+  width:200rpx;
+  border:1px solid rebeccapurple;
+  height:260rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo image{
+  height:200rpx;
+  border:1px solid aquamarine;
+}
+.logo text{
+  font-size:32rpx;
+  color:#ccc;
+}
+.introduction{
+  border:1px solid saddlebrown;
+  width:80%;
+  height:440rpx;
+  padding: 0 10rpx;
+  font-size:32rpx;
+  text-indent: 27px;
+  line-height:50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.mainBottom{
+  border:1px solid red;
+  height:300rpx;
+  margin-top:10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.ourImage{
+  width:84%;
+  border:1px solid sandybrown;
+  height:290rpx;
+}

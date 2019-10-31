@@ -5,7 +5,7 @@
   <view class="top">
     <view class="topBackground"></view>
     <view class="topNavigation">
-      <image class="topBackIcon" mode="widthFix" src="./back.png"></image>
+      <image class="topBackIcon" bindtap="back" mode="widthFix" src="../../iconfont-img/back.png"></image>
       <text>订单异常</text>
     </view>
     <input class="topInput" placeholder="异常运单号"></input>

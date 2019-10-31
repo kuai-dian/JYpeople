@@ -1,11 +1,17 @@
 .navbar-relation2 {
   position: absolute;
   left: 50%;
-  top: 13.8%;
+  top: 17%;
   transform: translate(-50%,-50%);
   font-size: 36rpx;
   color: #fff;
   z-index: 0;
+}
+.topBackIcon{
+  height:40rpx;
+  width:40rpx;
+  margin-top:75rpx;
+  margin-left:20rpx;
 }
 .home-page2{
   position: fixed;
@@ -19,10 +25,11 @@
 
 .detail-main{
 	width:100%;
-  padding-top: 150rpx;
+  padding-top: 30rpx;
   position:absolute;
 }
 .main-status{
+  border:1px solid #ccc;
 	margin:0 auto;
 	margin-bottom:60rpx;
 	/* border:1rpx solid #FAFAFA; */
@@ -31,6 +38,7 @@
 	display: flex;
 	flex-direction:column ;
 	border-radius: 19.6rpx;
+
 }
 .status-img{
 	display: flex;

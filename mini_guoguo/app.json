@@ -1,20 +1,17 @@
 {
   "pages": [
-    
-    "pages/index/index",   
+    "pages/index/index",
     "pages/submit/submit",
     "pages/yellow/yellow",
     "pages/myhome/myhome",
-    
+    "pages/abnormal/abnormal",
     "pages/feedback/feedback",
     "pages/userinfo/userinfo",
+    "pages/advDetail/advDetail",
     "pages/detail/detail",
-    
-    
-    
     "pages/startpage/startpage",
-    
-    
+    "pages/myPackage/myPackage",
+    "pages/about/about",
     "pages/post/post",
     "pages/service/service",
     "pages/input-sousuo/input-sousuo"

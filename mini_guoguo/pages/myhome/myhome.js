@@ -54,7 +54,11 @@ Component({
         var dateStr = year + '-' + getFormatDate(month) + '-' + getFormatDate(day);
         return dateStr;
       },
-
+      toMyPackage:function(){
+        wx.navigateTo({
+          url: '../myPackage/myPackage',
+        })
+      },
 //获取两个日期的相差日期数(differ 相差天数：1、相差小时数：2、相差分钟数：3、相差秒数：4)
       getDifferDate : function (firstDate, secondDate, differ) {
         //1)将两个日期字符串转化为日期对象

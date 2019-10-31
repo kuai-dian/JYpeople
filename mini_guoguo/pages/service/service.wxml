@@ -1,0 +1,9 @@
+<!--pages/service/service.wxml-->
+
+<view class="main">
+  <view class="serviceImg">
+    <image mode="widthFix" src="http://106.54.52.67/service.png"></image>
+  </view>
+  <text>联系客服</text>
+</view>
+

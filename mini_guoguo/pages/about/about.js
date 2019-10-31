@@ -1,34 +1,18 @@
-// pages/submit/submit.js
+// pages/about/about.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgList: []
+
   },
-  // 广告接口获取数据
-  getAdvImg() {
-    let that = this;
-    wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/advertise',
-      success: function (res) {
-        that.setData({
-          imgList: res.data
-        })
-      }
-    })
-  },
-  back:function(){
-    wx.redirectTo({
-      url: '../detail/detail',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getAdvImg();
+
   },
 
   /**

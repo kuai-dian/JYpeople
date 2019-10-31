@@ -1,0 +1,8 @@
+/* pages/advDetail/advDetail.wxss */
+.main{
+  width:100%;
+}
+.main image{
+  width:100%;
+}
+

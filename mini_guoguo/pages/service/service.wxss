@@ -1,0 +1,24 @@
+/* pages/service/service.wxss */
+.main{
+  border:1px solid #ccc;
+  width:600rpx;
+  height:700rpx;
+  border-radius:24rpx;
+  margin:0 auto;
+  margin-top:100rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom:32rpx;
+}
+.serviceImg{
+  border-bottom:1px solid #ccc;
+  width:598rpx;
+  height:598rpx;
+}
+.serviceImg image{
+  width:100%;
+}
+

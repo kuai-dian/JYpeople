@@ -1,0 +1,33 @@
+<!--pages/myPackage/myPackage.wxml-->
+<!--pages/myPackage/myPackage.wxml-->
+<view class="package">
+  <view class="packageTop">
+    <h4 class="have-order">新发布 {{receive}}</h4>
+    <p class="have-statements">已结单 {{account}}</p>
+  </view>
+
+  <!-- 下半部分 -->
+  <view class="packageBottom">
+    <scroll-view scroll-y>
+    <!-- 这里放接下来的内容 -->
+      <view >
+      <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
+        <view class="Main" >
+        <!-- {{Express[index].name}} -->
+          <view class="mainImg" >
+            <image mode="widthFix" src="{{Express[index].postInc.icon}}"></image>
+          </view>
+          <view class="mainDetail" >
+            <text class="mainDetail-yundan">运单号：{{Express[index].postId}}</text>
+            <text>状态：{{Express[index].condition==0?'等待接单':'已接单'}}</text>
+            <text>{{Express[index].time}}</text>
+          </view>
+        </view>
+      </view>
+
+      </view>
+
+    </scroll-view>
+  </view>
+</view>
+

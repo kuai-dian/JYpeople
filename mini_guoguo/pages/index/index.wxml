@@ -2,7 +2,7 @@
 <view class="top" style="background:#fff;display:block;">
     <!-- 顶部导航栏 -->
     <nav-bar navbar-data='{{nvabarData}}'></nav-bar>
-
+    
     <view class='home-page2' style='margin-top: {{height}}px'>
       <h4 wx:for="{{SysInfo}}" wx:key="{{index}}" class="navbar-relation2">{{SysInfo[index].index}}</h4>
     </view>

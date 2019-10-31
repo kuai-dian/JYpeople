@@ -1,7 +1,11 @@
   <!-- 最顶部导航栏 -->
-  <view class='home-page2'>
-  <h4 class="navbar-relation2">订单详情</h4>
-  </view>
+  <!-- <view class='home-page2'>
+  
+    <image class="topBackIcon"  bindtap="backIndex" mode="widthFix" src="../../iconfont-img/back.png"></image>
+    <h4 class="navbar-relation2">订单详情</h4>
+  </view> -->
+  
+
 
   <!-- 页面内容 -->
 <view class="detail-main">
@@ -13,7 +17,8 @@
       <view class="img-text">
         <text>运单号：{{info.postId}}</text>
         <text>收货地址：{{info.address}}</text>
-        <text>收货姓名：{{info.name}}</text>
+        <text>收货姓名：{{info.name}}
+        </text>
       </view>
     </view>
     <text class="status-yunda">{{info.postInc.name}}  官方电话：{{info.postInc.phone}}</text>
@@ -26,19 +31,17 @@
     </view>
     <view class="status-ser">
       <text bindtap="remider"  class="ser-white" wx:if="{{!info.conditions}}">催单</text>
-      <text bindtap="contact" class="ser-black">联系{{info.postman.name}}</text>
-      <text bindtap="feedback" class="ser-black">订单异常？</text>
+      <text bindtap="contact" class="ser-black" bindtap="call">联系{{info.postman.name}}</text>
+      <text bindtap="feedback" class="ser-black" bindtap="clickAbnormal">订单异常？</text>
     </view>
     <text class="status-time">下单时间：{{info.time}}</text>
   </view>
   
   <view class="main-adv">
-    <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain">
-      <swiper-item class="swiperItem" wx:for="{{imgList}}" wx:key="{{index}}">
-        <navigator>
-          <!-- index是键值 -->
-          <image class="swiperImage" mode="widthFix" src="{{imgList[index].banner}}"></image>
-        </navigator>
+    <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain" indicator-color="#ccc" indicator-active-color="red">
+      <swiper-item class="swiperItem" wx:for="{{list}}" wx:key="{{index}}">
+          <!-- index是键值 {{imgList}}  {{list[index].banner}}-->
+          <image catchtap="toAdv" data-post-id="{{item.id}}" data-post-img="{{item.img}}" class="swiperImage" mode="widthFix" src="{{item.pic}}"></image>
       </swiper-item>
     </swiper>
   </view>
