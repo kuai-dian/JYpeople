@@ -96,6 +96,10 @@ Component({
 
     pageLifetimes: {
       show() {
+        this.getTabBar().setData({
+          // 跳转驿站页面
+          selected: 2
+        });
         let that = this
         var userinfo = wx.getStorageSync('userinfo')
         if(userinfo){
@@ -111,10 +115,7 @@ Component({
           userday: result
         })
         // 发送后台换取 用户资料
-        this.getTabBar().setData({
-          // 跳转驿站页面
-          selected: 2
-        });
+       
       }
     },
     
