@@ -11,8 +11,8 @@ module.exports = {
     },
     GuoGuo: {
         jwtSecret: 'JDZkuaidiankejidapingxi',
-        appId: 'wx3f969596f8f7d2be',
-        appSecret: '9ddd50245607f4dbbeadf60df3dffe5a',
+        appId: 'wxadc4ef260d8b419b',
+        appSecret: '977bd935e5046ebd61c9a286f2fad2d7',
     },
     //阿里云OSS配置信息
     ossUrl: 'https://kd-print.oss-cn-hangzhou.aliyuncs.com/',

@@ -39,6 +39,11 @@ Page({
       url: '../submit/submit',
     })
   },
+  handleClick:function(){
+    wx.navigateTo({
+      url: '../input-sousuo/input-sousuo',
+    })
+  },
   getSum() {
     let that = this;
     wx.request({
