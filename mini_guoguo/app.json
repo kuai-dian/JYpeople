@@ -1,19 +1,20 @@
 {
   "pages": [
-    "pages/index/index",
     
+    "pages/index/index",   
     "pages/submit/submit",
     "pages/yellow/yellow",
     "pages/myhome/myhome",
     
     "pages/feedback/feedback",
     "pages/userinfo/userinfo",
+    "pages/detail/detail",
     
     
     
     "pages/startpage/startpage",
     
-    "pages/detail/detail",
+    
     "pages/post/post",
     "pages/service/service",
     "pages/input-sousuo/input-sousuo"
