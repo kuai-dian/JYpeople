@@ -21,20 +21,20 @@ Page({
     list:[
       {
         id: "华公教育",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/84298f8c72118708a65f4ff092c75696.jpg_r_640x290x70_d110ba9a.jpg",
+        pic: "http://j.jdzxy.xyz/edu.jpg",
         img: "http://j.jdzxy.xyz/pic01.png"
       },{
         id: "聚汇",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/98f78f42ea70a06985f7a565f2aeb035.jpg_r_640x290x70_d1b02ba3.jpg",
+        pic: "http://j.jdzxy.xyz/mov.jpg",
         img: "http://j.jdzxy.xyz/pic02.png"
       },{
         id: "Nice造型",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/b8a820334e2cea2eed1540850a44bc3b.jpg_r_640x290x70_da605bda.jpg",
+        pic: "http://j.jdzxy.xyz/nice.jpg",
         img: "http://j.jdzxy.xyz/pic03.png"
       },
       {
         id: "三号酒馆",
-        pic: "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/98f78f42ea70a06985f7a565f2aeb035.jpg_r_640x290x70_d1b02ba3.jpg",
+        pic: "http://j.jdzxy.xyz/3h.jpg",
         img: "http://j.jdzxy.xyz/pic04.png"
       }
     ]
