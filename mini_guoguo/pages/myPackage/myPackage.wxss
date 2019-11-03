@@ -42,7 +42,10 @@
 .mainImg{
   width:20.25%;
   height:130rpx;
-
+  overflow: hidden;
+}
+.mainImg image{
+  width:100%;
 }
 .mainDetail{
   width:70%;

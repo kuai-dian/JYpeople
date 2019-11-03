@@ -74,7 +74,7 @@
   top: 180rpx;
   overflow: hidden;
   margin:0 auto;
-  margin-bottom:4rpx;
+  margin-bottom:9rpx;
 }
 /* 已接单下面添加的内容 */
 .mainImg{

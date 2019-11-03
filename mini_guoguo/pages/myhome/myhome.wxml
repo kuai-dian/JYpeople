@@ -62,7 +62,7 @@
 <!-- 列表整体布局 -->
 <view class="personal-container" >
 <!-- 导入包裹列表 -->
-  <view class="package-list"  bindtap="toMyPackage">
+  <view class="package-list"  catchtap="toMyPackage">
     <view class="left-text">
       <icon class="KuaiDian GuoGuo-daoru"></icon>
       <h4 class="package-text">我的裹裹列表</h4>

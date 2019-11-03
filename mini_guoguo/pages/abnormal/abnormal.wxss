@@ -1,7 +1,8 @@
 /* pages/abnormal/abnormal.wxss */
 /* 顶部、信息填写和广告位都用的fixed定位 */
 /* 页面顶部 */
-.topBackground{
+
+/* .topBackground{
   position: fixed;
   width:100%;
   height:560rpx;
@@ -24,18 +25,17 @@
 }
 .topNavigation text{
   margin-left:210rpx;
-}
+} */
 .topInput{
-  position:fixed;
-  margin-top:170rpx;
-  margin-left:11%;
+  border:1px solid #ccc;
+  margin:25rpx auto;
   padding-left:24rpx;
   background:white;
-  width:76%;
+  width:80%;
   height:64rpx;
   border-radius:10rpx;
   font-size:32rpx;
-}
+} 
 
 
 /* 信息输入 */
@@ -46,7 +46,6 @@
   height:677rpx;
   position: fixed;
   z-index:100;
-  margin-top:270rpx;
 }
 .dataTxetarea{
   border:1px solid #ccc;

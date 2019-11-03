@@ -3,11 +3,11 @@
 
   <!-- navigation导航 -->
   <view class="top">
-    <view class="topBackground"></view>
+    <!-- <view class="topBackground"></view>
     <view class="topNavigation">
       <image class="topBackIcon" bindtap="back" mode="widthFix" src="../../iconfont-img/back.png"></image>
       <text>订单异常</text>
-    </view>
+     </view>  -->
     <input class="topInput" placeholder="异常运单号"></input>
   </view>
 

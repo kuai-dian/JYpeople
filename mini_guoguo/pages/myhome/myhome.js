@@ -18,6 +18,7 @@ Component({
       userInfo: {},
       hasUserInfo: false,
       canIUse: wx.canIUse('button.open-type.getUserInfo')
+      
     },
     methods:{
       getUserInfo: function (e) {
