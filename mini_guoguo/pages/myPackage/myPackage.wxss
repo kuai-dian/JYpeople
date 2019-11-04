@@ -18,7 +18,12 @@
 /* 这里放接下来的内容的整体布局 */
 .packageBottom{
   border:1px solid slateblue;
-  margin-top:-160rpx;
+  height:100vh;
+  /* margin-top:-160rpx; */
+}
+.scroll{
+  border:1px solid red;
+  height:100vh;
 }
 .box3{
   position: relative;

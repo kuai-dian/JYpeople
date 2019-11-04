@@ -11,7 +11,7 @@ Page({
   getAdvImg() {
     let that = this;
     wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/advertise',
+      url: 'https://few.e-spy.cn/JYguoguo/api/advertise',
       success: function (res) {
         that.setData({
           imgList: res.data

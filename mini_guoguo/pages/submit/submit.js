@@ -15,6 +15,34 @@ Page({
     objectMultiArray: [
     ],
     multiIndex: 0,
+    list: [
+      {
+        id: "华公教育",
+        pic: "http://j.jdzxy.xyz/edu.jpg",
+        img: "http://j.jdzxy.xyz/pic01.png"
+      }, {
+        id: "聚汇",
+        pic: "http://j.jdzxy.xyz/mov.jpg",
+        img: "http://j.jdzxy.xyz/pic02.png"
+      }, {
+        id: "Nice造型",
+        pic: "http://j.jdzxy.xyz/nice.jpg",
+        img: "http://j.jdzxy.xyz/pic03.png"
+      },
+      {
+        id: "三号酒馆",
+        pic: "http://j.jdzxy.xyz/3h.jpg",
+        img: "http://j.jdzxy.xyz/pic04.png"
+      }
+    ]
+  },
+  toAdv: function (event) {
+    console.log(event)
+    let postId = event.currentTarget.dataset.postId
+    let postImg = event.currentTarget.dataset.postImg
+    wx.navigateTo({
+      url: '../advDetail/advDetail?id=' + postId + '&img=' + postImg,
+    })
   },
   bindMultiPickerChange:function(e){
     this.setData({

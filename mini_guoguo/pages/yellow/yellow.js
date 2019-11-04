@@ -142,7 +142,7 @@ Page({
   getExpress() {
     let that = this;
     wx.request({
-      url: 'http://119.29.163.198:30002/JYguoguo/api/postinc',
+      url: 'https://few.e-spy.cn/JYguoguo/api/postinc',
       method: 'GET',
       success: function (res) {
         console.log(res.data);

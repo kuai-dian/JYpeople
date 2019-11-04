@@ -8,15 +8,14 @@
 
   <!-- 下半部分 -->
   <view class="packageBottom">
-    <scroll-view scroll-y>
+    <scroll-view class="scroll" scroll-y>
     <!-- 这里放接下来的内容 -->
-      <view >
 
-      <view class="box3" wx:for="{{list}}" wx:key="{{index}}" id="{{list.id}}">
+      <!-- <view class="box3" wx:for="{{list}}" wx:key="{{index}}" id="{{list.id}}">
         <navigator url="../detail/detail?icon={{item.icon}}&add={{item.add}}&postId={{item.postId}}&name={{item.name}}&kd={{item.kd}}&num={{item.num}}&status={{item.status}}&jdinfo={{item.jdinfo}}&time={{item.time}}">
-          <view class="Main" >
+          <view class="Main" > -->
           <!-- {{Express[index].name}} -->
-            <view class="mainImg" >
+            <!-- <view class="mainImg" >
               <image mode="widthFix" src="{{item.icon}}"></image>
             </view>
             <view class="mainDetail" >
@@ -26,14 +25,14 @@
             </view>
           </view>
         </navigator>
-      </view>
+      </view> -->
 
 
 <!-- 原始数据 -->
-      <!-- <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
-        <view class="Main" > -->
+      <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
+        <view class="Main" >
         <!-- {{Express[index].name}} -->
-          <!-- <view class="mainImg" >
+          <view class="mainImg" >
             <image mode="widthFix" src="{{Express[index].postInc.icon}}"></image>
           </view>
           <view class="mainDetail" >
@@ -42,11 +41,10 @@
             <text>{{Express[index].time}}</text>
           </view>
         </view>
-      </view> -->
-
-
-
       </view>
+
+
+
 
     </scroll-view>
   </view>

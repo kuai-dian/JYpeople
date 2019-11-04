@@ -36,44 +36,19 @@
   <scroll-view scroll-y>
     <!-- 这里放接下来的内容 -->
       <view style="margin-bottom:280rpx;">
-      <!-- <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
-        <view class="Main" > -->
-        <!-- {{Express[index].name}} -->
-          <!-- <view class="mainImg" >
-            <image mode="widthFix" src="{{Express[index].postInc.icon}}"></image>
-          </view>
-          <view class="mainDetail" >
-            <text class="mainDetail-yundan">运单号：{{Express[index].postId}}</text>
-            <text>状态：{{Express[index].condition==0?'等待接单':'已接单'}}</text>
-            <text>{{Express[index].time}}</text>
+        <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
+          <view class="Main" >
+          <!-- {{Express[index].name}} -->
+            <view class="mainImg" >
+              <image mode="widthFix" src="{{Express[index].postInc.icon}}"></image>
+            </view>
+            <view class="mainDetail" >
+              <text class="mainDetail-yundan">运单号：{{Express[index].postId}}</text>
+              <text>状态：{{Express[index].condition==0?'等待接单':'已接单'}}</text>
+              <text>{{Express[index].time}}</text>
+            </view>
           </view>
         </view>
-      </view> -->
-
-
-<!-- 测试数据 catchtap="click"-->
-      <view class="box3" wx:for="{{list}}" wx:key="{{index}}"  id="{{list[index].id}}">
-        <navigator url="../detail/detail?icon={{item.icon}}&add={{item.add}}&postId={{item.postId}}&name={{item.name}}&kd={{item.kd}}&num={{item.num}}&status={{item.status}}&jdinfo={{item.jdinfo}}&time={{item.time}}">
-        <view class="Main">
-        <!-- {{Express[index].name}} -->
-          <view class="mainImg">
-            <image mode="widthFix" src="{{item.icon}}"></image>
-          </view>
-          <view class="mainDetail">
-            <text class="mainDetail-yundan">运单号：{{item.postId}}</text>
-            <text>状态：{{item.status}}</text>
-            <text>时间：{{item.time}}</text>
-          </view>
-          
-        </view>
-        </navigator>
-      </view>
-
-
-
-
-
-
       </view>
 
   </scroll-view>

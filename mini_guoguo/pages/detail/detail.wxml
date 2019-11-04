@@ -9,7 +9,7 @@
 
   <!-- 页面内容 -->
 <view class="detail-main">
-  <!-- <view class="main-status">
+  <view class="main-status">
     <view class="status-img">
       <view class="img-yunda">
         <image mode="widthFix" src="{{info.postInc.icon}}"></image>
@@ -35,46 +35,7 @@
       <text bindtap="feedback" class="ser-black" bindtap="clickAbnormal">订单异常？</text>
     </view>
     <text class="status-time">下单时间：{{info.time}}</text>
-  </view> -->
-
-
-
-<!-- 测试 -->
-  <view class="main-status">
-    <view class="status-img">
-      <view class="img-yunda">
-        <image mode="widthFix" src="{{icon}}"></image>
-      </view>
-      <view class="img-text">
-        <text class="yundanhao">运单号：{{postId}}</text>
-        <text>收货地址：{{add}}</text>
-        <text>收货姓名：{{name}}
-        </text>
-      </view>
-    </view>
-    <text class="status-yunda">{{kd}}  官方电话：{{num}}</text>
-    <view class="status-now">
-      <view class="now-status">当前状态:</view>
-      <view class="now-receive">
-        <text class="receive-xi">({{jdinfo}})</text>
-        <text class="receive-jie">{{status}}</text>
-      </view>
-    </view>
-    <view class="status-ser">
-      <text bindtap="remider"  class="ser-white" wx:if="{{!info.conditions}}">催单</text>
-      <text bindtap="contact" class="ser-black" bindtap="call">联系{{info.postman.name}}</text>
-      <text bindtap="feedback" class="ser-black" bindtap="clickAbnormal">订单异常？</text>
-    </view>
-    <text class="status-time">下单时间：{{time}}</text>
   </view>
-
-
-
-
-
-
-
-  
   <view class="main-adv">
     <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain" indicator-color="#ccc" indicator-active-color="red">
       <swiper-item class="swiperItem" wx:for="{{list}}" wx:key="{{index}}">
@@ -83,5 +44,4 @@
       </swiper-item>
     </swiper>
   </view>
-  <text></text>
 </view>
