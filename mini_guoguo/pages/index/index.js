@@ -137,8 +137,7 @@ Page({
   },
   click: function (e) {
     var id = e.currentTarget.id
-    console.log(e)
-    console.log()
+    // console.log(e)
     var id=e.currentTarget.id
     // console.log(id)
     wx.navigateTo({
@@ -148,19 +147,10 @@ Page({
         res.eventChannel.emit('acceptDataFromOpenerPage', { id: id })
       }
     })
-
-
-
-
-
-
-
-
-
   },
   toSubmit:function(options){
     wx.navigateTo({
-      url: '../submit/submit',
+      url: '../submit/submit'
     })
   },
   handleClick:function(){
@@ -197,7 +187,7 @@ Page({
       url: `${config.api}/userOrders/${userid}`,
       method: 'GET',
       success: function (res) {
-        console.log(res.data);
+        // console.log(res.data);
         that.setData({
           Express: res.data,
           receive: (res.data).length,
@@ -208,7 +198,7 @@ Page({
       url: `${config.api}/userOrdersDone/${userid}`,
       method: 'GET',
       success: function (res) {
-        console.log(res.data);
+        // console.log(res.data);
         that.setData({
           account: (res.data).length
         })

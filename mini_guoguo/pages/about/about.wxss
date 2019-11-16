@@ -24,7 +24,6 @@
 }
 .logo text{
   font-size:32rpx;
-  color:#ccc;
 }
 .introduction{
   width:80%;

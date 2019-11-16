@@ -22,7 +22,7 @@
     <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain" indicator-color="#ccc" indicator-active-color="red">
       <swiper-item class="swiperItem" wx:for="{{list}}" wx:key="{{index}}">
           <!-- index是键值 {{imgList}}  {{list[index].banner}}-->
-          <image catchtap="toAdv" data-post-id="{{item.id}}" data-post-img="{{item.img}}" class="swiperImage" mode="widthFix" src="{{item.pic}}"></image>
+          <image catchtap="toAdv" data-post-id="{{item.name}}" data-post-img="{{item.url}}" class="swiperImage" mode="widthFix" src="{{item.banner}}"></image>
       </swiper-item>
     </swiper>
   </view>

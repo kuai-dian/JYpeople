@@ -17,7 +17,7 @@ Page({
         class: '班级',
         signature: '这家伙真懒，还不填一些个性签名给景院小伙伴看呐！',
   },
-  submitSave:function(){
+  submitSave:function(e){
     let that = this
     var userinfo = wx.getStorageSync('userinfo')
     var token = wx.getStorageSync('token')
@@ -36,6 +36,14 @@ Page({
           },
           success: function (res) {
             console.log(res.data)
+            wx.showToast({
+              title: '提交成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(function(){
+              wx.navigateBack()
+            },1000)
           }
         })
     }else{
@@ -51,6 +59,7 @@ Page({
         }
       })
     }
+    
   },
   bindKeyPhone: function (e) {
     var key = e.currentTarget.id

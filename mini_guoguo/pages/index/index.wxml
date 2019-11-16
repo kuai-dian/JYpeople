@@ -7,9 +7,9 @@
       <h4 wx:for="{{SysInfo}}" wx:key="{{index}}" class="navbar-relation2">{{SysInfo[index].index}}</h4>
     </view>
 
-    <!-- 搜索输入框 -->
+    <!-- 搜索输入框  bindtap="handleClick"-->
     <view class="contain">
-      <view class="input-sou" bindtap="handleClick">
+      <view class="input-sou">
         <image class="sousuo" src="../../iconfont-img/sousou.png"></image>
         <p class="waybill">运单号来这里 查包裹</p>
       </view>

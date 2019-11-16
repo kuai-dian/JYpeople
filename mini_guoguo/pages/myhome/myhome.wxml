@@ -30,7 +30,7 @@
       <!-- 头部文字总体 -->
           <view class="Text-box">
               <view class="portrait">
-                <h4 class="portrait-text">{{userInfo.nickName}}</h4>          
+                <view class="portrait-text">{{userInfo.nickName}}</view>          
               </view>
                 <view class="Data">
                 <p class="Data-text">这是你使用景院裹裹的第 {{userday}} 天</p>                
@@ -45,7 +45,7 @@
             </view>
             <!-- 裹裹余额？ -->
             <view class="guoguo-balance">
-              <h4 class="balance" >裹裹余额 <span style="color:red;">{{userInfo.guoguo}}</span></h4>
+              <h4 class="balance" >裹裹余额 <span style="color:red;padding-left:10rpx;">{{userInfo.guoguo}}</span></h4>
             </view>
              <view class="guoguo-text">
               <h4 class="balance-text">邀请新人限时领取海量裹派余额</h4>

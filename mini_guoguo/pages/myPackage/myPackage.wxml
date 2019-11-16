@@ -1,52 +1,23 @@
-<!--pages/myPackage/myPackage.wxml-->
-<!--pages/myPackage/myPackage.wxml-->
-<view class="package">
-  <view class="packageTop">
-    <h4 class="have-order">新发布 {{receive}}</h4>
-    <p class="have-statements">已结单 {{account}}</p>
-  </view>
 
-  <!-- 下半部分 -->
-  <view class="packageBottom">
-    <scroll-view class="scroll" scroll-y>
-    <!-- 这里放接下来的内容 -->
-
-      <!-- <view class="box3" wx:for="{{list}}" wx:key="{{index}}" id="{{list.id}}">
-        <navigator url="../detail/detail?icon={{item.icon}}&add={{item.add}}&postId={{item.postId}}&name={{item.name}}&kd={{item.kd}}&num={{item.num}}&status={{item.status}}&jdinfo={{item.jdinfo}}&time={{item.time}}">
-          <view class="Main" > -->
-          <!-- {{Express[index].name}} -->
-            <!-- <view class="mainImg" >
-              <image mode="widthFix" src="{{item.icon}}"></image>
-            </view>
-            <view class="mainDetail" >
-              <text class="mainDetail-yundan">运单号：{{item.postId}}</text>
-              <text>状态：{{item.status}}</text>
-              <text>{{item.time}}</text>
-            </view>
-          </view>
-        </navigator>
-      </view> -->
-
-
-<!-- 原始数据 -->
-      <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
-        <view class="Main" >
-        <!-- {{Express[index].name}} -->
-          <view class="mainImg" >
-            <image mode="widthFix" src="{{Express[index].postInc.icon}}"></image>
-          </view>
-          <view class="mainDetail" >
-            <text class="mainDetail-yundan">运单号：{{Express[index].postId}}</text>
-            <text>状态：{{Express[index].condition==0?'等待接单':'已接单'}}</text>
-            <text>{{Express[index].time}}</text>
-          </view>
-        </view>
-      </view>
-
-
-
-
-    </scroll-view>
-  </view>
+<view class="top">
+  <view class="topLeft">新发布2</view>
+  <view class="topRight">已结单</view>
 </view>
+<scroll-view style="padding-top:100rpx;" class="scroll" scroll-y>
+  <view class="box3" wx:for="{{Express}}" wx:key="{{index}}" bindtap="click" id="{{Express[index]._id}}">
+    <view class="Main" >
+    <!-- {{Express[index].name}} -->
+      <view class="mainImg" >
+        <image mode="widthFix" src="{{Express[index].postInc.icon}}"></image>
+      </view>
+      <view class="mainDetail" >
+        <text class="mainDetail-yundan">运单号：{{Express[index].postId}}</text>
+        <text>状态：{{Express[index].condition==0?'等待接单':'已接单'}}</text>
+        <text>{{Express[index].time}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+
 

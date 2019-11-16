@@ -15,26 +15,27 @@ Page({
     objectMultiArray: [
     ],
     multiIndex: 0,
-    list: [
-      {
-        id: "华公教育",
-        pic: "http://j.jdzxy.xyz/edu.jpg",
-        img: "http://j.jdzxy.xyz/pic01.png"
-      }, {
-        id: "聚汇",
-        pic: "http://j.jdzxy.xyz/mov.jpg",
-        img: "http://j.jdzxy.xyz/pic02.png"
-      }, {
-        id: "Nice造型",
-        pic: "http://j.jdzxy.xyz/nice.jpg",
-        img: "http://j.jdzxy.xyz/pic03.png"
-      },
-      {
-        id: "三号酒馆",
-        pic: "http://j.jdzxy.xyz/3h.jpg",
-        img: "http://j.jdzxy.xyz/pic04.png"
-      }
-    ]
+    list: []
+    // list: [
+    //   {
+    //     id: "华公教育",
+    //     pic: "http://j.jdzxy.xyz/edu.jpg",
+    //     img: "http://j.jdzxy.xyz/pic01.png"
+    //   }, {
+    //     id: "聚汇",
+    //     pic: "http://j.jdzxy.xyz/mov.jpg",
+    //     img: "http://j.jdzxy.xyz/pic02.png"
+    //   }, {
+    //     id: "Nice造型",
+    //     pic: "http://j.jdzxy.xyz/nice.jpg",
+    //     img: "http://j.jdzxy.xyz/pic03.png"
+    //   },
+    //   {
+    //     id: "三号酒馆",
+    //     pic: "http://j.jdzxy.xyz/3h.jpg",
+    //     img: "http://j.jdzxy.xyz/pic04.png"
+    //   }
+    // ]
   },
   toAdv: function (event) {
     console.log(event)
@@ -75,13 +76,13 @@ Page({
       address: e.detail.value
     })
   },
-  submitOrder(){
+  submitOrder(e){
     let that = this
     var userinfo = wx.getStorageSync('userinfo')
     var token = wx.getStorageSync('token')
     var userid = wx.getStorageSync('userid')
     var postInc = that.data.objectMultiArray[that.data.multiIndex]._id
-    console.log(postInc)
+    // console.log(postInc)
     if (that.data.message && that.data.name && that.data.address && that.data.code) {
       wx.request({
         url: `${config.api}/pullOrders`,
@@ -106,9 +107,15 @@ Page({
             icon: 'success',
             duration: 2000
           })
-          wx.navigateTo({
-            url: `/pages/index/index`
-          })
+          wx.navigateBack()
+          var pages = getCurrentPages()
+          console.log(pages)
+          if (pages.length > 1) {
+            //上一个页面实例对象            
+            var prePage = pages[pages.length - 2]
+            //关键在这里            
+            prePage.changeData(e)
+          }
         }
       })
       wx.showToast({
@@ -129,6 +136,8 @@ Page({
         }
       })
     }
+    
+     
   },
   // 广告接口获取数据
   getAdvImg() {
@@ -146,6 +155,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
+    wx.request({
+      url: `${config.api}/advertise`,
+      method: 'GET',
+      success: function (res) {
+        console.log('轮播图data')
+        console.log(res.data);
+        that.setData({
+          list: res.data
+        })
+      }
+    })
     this.getAdvImg();
     var userinfo = wx.getStorageSync('userinfo')
     var token = wx.getStorageSync('token')

@@ -1,39 +1,7 @@
-<view>
-
-
-  <!-- navigation导航 -->
-  <view class="top">
-    <!-- <view class="topBackground"></view>
-    <view class="topNavigation">
-      <image class="topBackIcon" bindtap="back" mode="widthFix" src="../../iconfont-img/back.png"></image>
-      <text>订单异常</text>
-     </view>  -->
-    <input class="topInput" placeholder="异常运单号"></input>
-  </view>
-
-
-  <!-- 内容填写区域 -->
-  <view class="dataInput">
-    <textarea name="" bindinput="" class="dataTxetarea" placeholder="异常原因"></textarea>
-    <view class="dataList">
-      <text>派送员：胡俊平(信工17计网)</text>
-      <text>派送进度：已接单</text>
-      <text>接单时间：20191025 12:57</text>
-      <text>悬赏1元</text>
-    </view>
-    <button class="dataBtn">提交</button>
-  </view>
-
-
-  <!-- 广告位 -->
-  <view class="main-adv">
-    <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain">
-      <swiper-item class="swiperItem" wx:for="{{imgList}}" wx:key="{{index}}">
-        <navigator>
-          <image class="swiperImage" mode="widthFix" src="{{imgList[index].banner}}"></image>
-        </navigator>
-      </swiper-item>
-    </swiper>
-  </view>
-    
+<view class="detileContainer">
+      <view class="weui-cell">
+      <textarea style="height:120px;" class="weui-input" bindblur="bindTextAreaBlur"  placeholder="您可以在这里描述对我们的建议、问题、订单异常以及商业合作等内容" />
+        <!-- <input class="weui-input" type="textarea" height="300"   bindinput="bindKeyPhone" id='phone' placeholder="{{phone}}"/> -->
+      </view>
+      <view class="submitSave" bindtap="submitSave">提交</view>
 </view>

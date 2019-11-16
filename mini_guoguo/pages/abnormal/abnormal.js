@@ -1,34 +1,72 @@
-// pages/submit/submit.js
+const config = require('../../config/config.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgList: []
+    content: '',
   },
-  // 广告接口获取数据
-  getAdvImg() {
-    let that = this;
-    wx.request({
-      url: 'https://few.e-spy.cn/JYguoguo/api/advertise',
-      success: function (res) {
-        that.setData({
-          imgList: res.data
-        })
-      }
-    })
+  submitSave: function () {
+    let that = this
+    var userinfo = wx.getStorageSync('userinfo')
+    var token = wx.getStorageSync('token')
+    var userid = wx.getStorageSync('userid')
+    if (0==0) {
+    // if (userinfo && token && userid && that.data.content) {
+      wx.request({
+        url: `${config.api}/feedback`,
+        method: 'POST',
+        data: {
+          content: that.data.content,
+          parent: userid
+        },
+        header: {
+          'content-type': 'application/json',
+          authorization: token,
+        },
+        success: function (res) {
+          // console.log(res.data)
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
+          setTimeout(function () {
+            wx.navigateBack()
+          },1000)
+        }
+        
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '请填写内容再提交哦！',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
   },
-  back:function(){
-    wx.redirectTo({
-      url: '../detail/detail',
+  bindTextAreaBlur: function (e) {
+    this.setData({
+      content: e.detail.value
     })
+    // console.log(this.data)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getAdvImg();
+    var userinfo = wx.getStorageSync('userinfo')
+    var token = wx.getStorageSync('token')
+    var userid = wx.getStorageSync('userid')
+
   },
 
   /**

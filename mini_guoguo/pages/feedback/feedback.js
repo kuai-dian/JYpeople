@@ -13,7 +13,8 @@ Page({
     var userinfo = wx.getStorageSync('userinfo')
     var token = wx.getStorageSync('token')
     var userid = wx.getStorageSync('userid')
-    if (userinfo && token && userid && that.data.content) {
+    // if (userinfo && token && userid && that.data.content) {
+    if (0==0) {
       wx.request({
         url: `${config.api}/feedback`,
         method: 'POST',
@@ -32,7 +33,12 @@ Page({
             icon: 'success',
             duration: 2000
           })
+          setTimeout(function () {
+            wx.navigateBack()
+          }, 1000)
+          // wx.navigateBack()
         }
+        
       })
     }else{
       wx.showModal({

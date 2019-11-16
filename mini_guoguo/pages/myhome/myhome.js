@@ -108,6 +108,8 @@ Component({
             userInfo: userinfo.model,
             hasUserInfo: true
           })
+          that.getUserInfo()
+
         }
         var lastdate = userinfo.model.createdAt
         var nowdata = new Date()

@@ -26,11 +26,11 @@
       <view class="now-status">当前状态:</view>
       <view class="now-receive">
         <text class="receive-xi">{{info.postman.name}}({{info.postman.class}} - {{info.postman.address}})</text>
-        <text class="receive-jie">{{info.condition==0?'等待接单':'已接单'}}</text>
+        <text class="receive-jie">{{info.condition==0?'等待接单':(info.condition==1?'已接单':(info.condition==2?'已取件':(info.condition==3?'已结件':'订单异常')))}}</text>
       </view>
     </view>
     <view class="status-ser">
-      <text bindtap="remider"  class="ser-white" wx:if="{{!info.conditions}}">催单</text>
+      <text   class="ser-white" >{{!info.conditions?'催单':'已催单'}}</text>
       <text bindtap="contact" class="ser-black" bindtap="call">联系{{info.postman.name}}</text>
       <text bindtap="feedback" class="ser-black" bindtap="clickAbnormal">订单异常？</text>
     </view>
@@ -40,7 +40,7 @@
     <swiper circular="true" indicator-dots="true" autoplay="true" class="swiperMain" indicator-color="#ccc" indicator-active-color="red">
       <swiper-item class="swiperItem" wx:for="{{list}}" wx:key="{{index}}">
           <!-- index是键值 {{imgList}}  {{list[index].banner}}-->
-          <image catchtap="toAdv" data-post-id="{{item.id}}" data-post-img="{{item.img}}" class="swiperImage" mode="widthFix" src="{{item.pic}}"></image>
+          <image catchtap="toAdv" data-post-id="{{item.name}}" data-post-img="{{item.url}}" class="swiperImage" mode="widthFix" src="{{item.banner}}"></image>
       </swiper-item>
     </swiper>
   </view>

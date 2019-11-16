@@ -90,7 +90,10 @@
   height:100%;
   border-radius:50%;
 }
+.portrait{
+  width:100%;
 
+}
 /* 头部文字总体 */
 .Text-box{
   position: absolute;
@@ -102,12 +105,17 @@
   height:156rpx;
 }
 .portrait-text{
-  width:158rpx;
-  height:38rpx;
+  width:200rpx;
+  height:60rpx;
   font-size:20px;
   font-family:Adobe Heiti Std;
   font-weight:normal;
   color:rgba(255,255,255,1);
+  margin-left:285rpx;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .Data{
   width:100%;
@@ -157,19 +165,14 @@
 
 /* 裹裹余额？ */
 .balance{
-  width:158rpx;
-  height:34rpx;
-  font-size:17px;
-  font-family:Adobe Heiti Std;
-  font-weight:normal;
-  color:rgba(0,0,0,1);
+  display: flex;
+  font-size:42rpx;
+  color:black;
 }
-
 .guoguo-balance{
   position: relative;
-  left: 31%;
-  top: 40%;
-  transform: translate(-50%,-50%);
+  margin-left:130rpx;
+  top: 20%;
 }
 .guoguo-text{
   position: absolute;
@@ -177,6 +180,7 @@
   top: 67%;
   transform: translate(-50%,-50%);
 }
+
 .balance-text{
   width:284rpx;
   height:20rpx;
@@ -237,11 +241,7 @@
   background-color: #fff;
   margin: 6px 0;
 }
-/* .GuoGuo-zuo{
-  display: inline-block;
-  line-height: 55px;
-  margin: 0 15px;
-} */
+
 /* 导入包裹文字 */
 .package-text{
   display: inline-block;
